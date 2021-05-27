@@ -2,6 +2,8 @@ from django.contrib.auth.models import User
 
 from django.db import models
 
+from django.urls import reverse
+
 
 class Gist(models.Model):
     title = models.CharField(max_length=64, verbose_name='Gist name')
@@ -9,6 +11,9 @@ class Gist(models.Model):
     content = models.TextField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     slug = models.SlugField()
+
+    def get_absolute_url(self):
+        return reverse('gist-detail', (), {'slug': self.slug})
 
     class Meta:
         db_table = 'gist'
