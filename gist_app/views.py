@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.views import generic
 
-# Create your views here.
+from gist_app.models import Gist
+
+
+class IndexGistView(generic.ListView):
+    queryset = Gist.objects.all()
+    template_name = 'index.html'
