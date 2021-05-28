@@ -13,7 +13,10 @@ class Gist(models.Model):
     slug = models.SlugField()
 
     def get_absolute_url(self):
-        return reverse('gist-detail', (), {'slug': self.slug})
+        return reverse('detail-gist', kwargs={'slug': self.slug})
+
+    def __str__(self):
+        return self.title
 
     class Meta:
         db_table = 'gist'
