@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Detail gist</title>
+{% endblock %}
+
+{% block body %}
+    {% for obj in detail_object %}
+        {{ obj.content }}
+    {% endfor %}
+{% endblock %}
