@@ -6,6 +6,18 @@
 
 {% block body %}
     {% for obj in detail_object %}
-        {{ obj.content | markdown | safe }}
+          <main role="main" class="flex-shrink-0">
+            <div class="container">
+                <h1 class="mt-5">{{ obj.title }}</h1>
+                <p class="lead">Publication date: {{ obj.pub_date }}</p>
+                <p class="lead">Author: {{ obj.user }}</p>
+                <p>
+                    <a href="{{ obj.get_absolute_url }}">Read</a>
+                </p>
+                <p class="lead">
+                    {{ obj.content | markdown | safe }}
+                </p>
+            </div>
+        </main>
     {% endfor %}
 {% endblock %}
