@@ -1,17 +1,21 @@
 {% extends 'base.html' %}
 
 {% block body %}
-    {% for obj in object_list %}
-        <!-- Begin page content -->
-        <main role="main" class="flex-shrink-0">
-            <div class="container">
-                <h1 class="mt-5">{{ obj.title }}</h1>
-                <p class="lead">Publication date: {{ obj.pub_date }}</p>
-                <p  class="lead">Author: {{ obj.user }}</p>
-                <p>
-                    <a href="{{ obj.get_absolute_url }}">Read</a>
-                </p>
-            </div>
-        </main>
-    {% endfor %}
+    {% if object_list %}
+        {% for obj in object_list %}
+            <!-- Begin page content -->
+            <main role="main" class="flex-shrink-0">
+                <div class="container">
+                    <h1 class="mt-5">{{ obj.title }}</h1>
+                    <p class="lead">Publication date: {{ obj.pub_date }}</p>
+                    <p class="lead">Author: {{ obj.user }}</p>
+                    <p>
+                        <a href="{{ obj.get_absolute_url }}">Read</a>
+                    </p>
+                </div>
+            </main>
+        {% endfor %}
+    {% else %}
+        <h2>List is empty</h2>
+    {% endif %}
 {% endblock %}
