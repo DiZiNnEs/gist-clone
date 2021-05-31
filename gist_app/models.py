@@ -4,12 +4,14 @@ from django.db import models
 
 from django.urls import reverse
 
+from gist_clone import settings
+
 
 class Gist(models.Model):
     title = models.CharField(max_length=64, verbose_name='Gist name')
     pub_date = models.DateTimeField(verbose_name='Publication date')
     content = models.TextField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     slug = models.SlugField()
 
     def get_absolute_url(self):
