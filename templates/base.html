@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     {% block title %} {% endblock %}
+    {% block css %} {% endblock %}
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.css' %}">
 </head>
 <body>
-
-{% block body %} {% endblock %}
+    {% block body %} {% endblock %}
+</body>
 
 {% block script %}
     <script src="{% static 'js/bootstrap.js' %}"></script>
     <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
 {% endblock %}
-
-</body>
 </html>
