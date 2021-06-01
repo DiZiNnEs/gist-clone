@@ -8,6 +8,6 @@ class UserForm(forms.ModelForm):
         model = CustomUser
         fields = ('email', 'password',)
         widgets = {
-            'email': forms.EmailInput(attrs={'class': 'form-control'}),
-            'password': forms.PasswordInput(attrs={'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Enter a email'}),
+            'password': forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Enter the password'}),
         }
