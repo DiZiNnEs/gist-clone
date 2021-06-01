@@ -8,4 +8,5 @@ from auth_app.models import CustomUser
 class CreateUserView(generic.CreateView):
     model = CustomUser
     form_class = UserForm
-    template_name = 'auth/sign-in.html'
+    template_name = 'auth/sign-up.html'
+    success_url = '/'  # change to login
