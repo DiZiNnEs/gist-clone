@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/authorization.css' %}">
+{% endblock %}
+
+{% block title %}
+    <title>Sign in</title>
+{% endblock %}
+
+{% block body %}
+    <form class="form-signin" method="POST">
+        {% csrf_token %}
+        <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72"
+             height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        {{ form.email }}
+        <label for="inputPassword" class="sr-only">Password</label>
+        {{ form.password }}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+{% endblock %}
