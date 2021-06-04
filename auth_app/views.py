@@ -1,4 +1,4 @@
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse_lazy
 from django.views import generic
 
 from auth_app.forms import UserForm
@@ -9,10 +9,10 @@ class CreateUserView(generic.CreateView):
     model = CustomUser
     form_class = UserForm
     template_name = 'auth/sign-up.html'
-    success_url = reverse_lazy('sign-in')
+    success_url = reverse_lazy('index-gist')
 
 
-class LoginUserView(generic.FormView):
+class LoginUserView(generic.View):
     form_class = UserForm
     template_name = 'auth/sign-in.html'
-    success_url = '/'
+    success_url = reverse_lazy('index-gist')
