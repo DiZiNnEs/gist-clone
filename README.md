@@ -1,3 +1,15 @@
-# №4 Project of backend list project
+# Gist clone
 
-### https://gist.github.com/MWins/41c6fec2122dd47fdfaca31924647499
+Gist clone project on Django
+
+## Usage
+Install
+
+```bash
+git clone https://github.com/DiZiNnEs/gist-clone
+cd gist-clone
+pipenv install
+pipenv shell
+python manage.py migrate
+python manage.py runserver
+```
